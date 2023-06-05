@@ -5,9 +5,9 @@ import axios from "axios";
 import Image from "next/image";
 
 
-export const metadata = {
-    title: 'Gallerys',
-}
+// export const metadata = {
+//     title: 'Gallerys',
+// }
 
 export default function GallerysPage() {
     const [photos, setPhotos] = useState();
