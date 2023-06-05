@@ -27,12 +27,13 @@ export default function Home() {
         const response = await axios.get("https://rest.1010-group.com/articles");
         const result = response.data.data;
         setDataart(result);
-        // console.log(dataart)
+        console.log(dataart)
         setLoadingart(false);
+        getData();
       } catch (error) {
         console.log(error);
       } finally {
-        getData();
+        
       }
     };
 
