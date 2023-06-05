@@ -28,10 +28,11 @@ export default function Home() {
         const result = response.data.data;
         setDataart(result);
         // console.log(dataart)
+        setLoadingart(false);
       } catch (error) {
         console.log(error);
       } finally {
-        setLoadingart(false);
+        getData();
       }
     };
 
@@ -42,14 +43,12 @@ export default function Home() {
         const result = response.data.data;
         setDatagal(result);
         // console.log(datagal)
+        setLoadinggal(false);
       } catch (error) {
         console.log(error);
       } finally {
-        setLoadinggal(false);
       }
     };
-
-    getData();
     getDataart();
   }, []);
 
