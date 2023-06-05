@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0, 0;
+    --background-end-rgb: 0, 0, 0, 0.3;
+  }
+}
+
+
+.dashboard-bg {
+  background-image: url(../public/images/dashboard-img.jpg);
+}
+.dashboard-bg-2 {
+  background-image: url(../public/images/dashboard-img-2.png);
+}
+.silo-bg {
+  background-image: url(../public/images/silo/1.jpg);
+}
+.sirloin-bg {
+  background-image: url(../public/images/sirloin/1.jpg);
+}
+.gallery-bg {
+  background-image: url(../public/images/gallery-img.png);
+}
+
+.nav-bg {
+  background-image: url(../public/images/nav-img.png);
+}
