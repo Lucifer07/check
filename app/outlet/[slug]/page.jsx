@@ -73,7 +73,7 @@ export default function ArticlesPage({ params }) {
                 <div dangerouslySetInnerHTML={createMarkup(data.description)}/>
                 </div>
                 <br></br>
-                <Link href={data.link} className=" mt-6 py-2 px-4 text-center bg-gray-700 text-white">
+                <Link href={data.link} className="flex justify-center items-center mt-6 py-2 px-4 text-center bg-gray-700 text-white">
                   View
                 </Link>
               </div>
