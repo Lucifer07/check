@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Articles(props) {
   const renderMoreLink = () => {
     if (props.more === "no") {
-      return null;
+      return <Link href="/outlet">View More</Link>;
     } else {
       return <Link href="/gallerys">View More</Link>;
     }
