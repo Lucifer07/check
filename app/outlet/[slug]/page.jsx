@@ -62,12 +62,12 @@ export default function ArticlesPage({ params }) {
       ) : (
         <>
           <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover" style={{ backgroundImage: `url("https://rest.1010-group.com/outlate/${data.image}")` }}>
-          <h1 className="text-3xl font-montserrat  text-center mt-6">{data.name.toUpperCase()}</h1>
           </div>
           <Nav id="Gallerys" />
       <main className="flex flex-col items-center justify-center">
             <section className="h-screen bg-white flex justify-center items-center">
               <div>
+          <h1 className="text-3xl font-montserrat  text-center mt-6">{data.name.toUpperCase()}</h1>
                 
                 <div className=" mx-3 font-Caveat">
                 <div dangerouslySetInnerHTML={createMarkup(data.description)}/>
