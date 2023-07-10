@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link";
 import Articles from "@/components/Articles";
-import Product from "@/components/Product";
 import Nav from "@/components/Nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -24,7 +23,7 @@ export default function Home() {
     const getData = async () => {
       try {
         setLoadingart(true);
-        const responseArt = await axios.get("https://rest.1010-group.com/articles");
+        const responseArt = await axios.get("https://rest.1010-group.com/outlet");
         const resultArt = responseArt.data.data;
         setDataart(resultArt);
         setLoadingart(false);
@@ -67,38 +66,37 @@ export default function Home() {
       <Nav id="Home" />
       <main>
         <div className="w-[90%] mx-auto pb-20">
-          <Articles title="articles" more={"all"}/>
+          <Articles title="outlate" more={"no"}/>
           {loadingart ? (
             <div className="flex h-screen items-center justify-center">
               <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
             </div>
           ) : (
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y]}
-              spaceBetween={10}
-              slidesPerView={isMobile ? 2 : 5}
-              navigation
-              scrollbar={{ draggable: true }}
-            >
-              {dataart && dataart.data.map((article, index) => (
-                <SwiperSlide key={index} className="p-5 flex flex-col gap-3">
-                  <div className="w-full bg-contain object-contain">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {dataart &&dataart.data.map((item) => (
+              <Link key={item.id} href={"/outlet/"+item.slug}>
+              <div className="relative cursor-pointer">
+                <div className="aspect-w-3 aspect-h-2">
+                  <div className="relative">
                     <img
-                      src={`https://rest.1010-group.com/article/${article.image}`}
-                      width={200}
-                      height={400}
-                      alt={article.title}
-                      className="w-full h-[200px] object-cover"
+                      src={`https://rest.1010-group.com/outlate/${item.image}`}
+                      alt={item.image}
+                      width={500}
+                      height={500}
+                      className="w-[200px] h-[200px] rounded-lg shadow-lg border-5 border-gray-600 object-cover"
+                      loading="lazy"
                     />
-                    <h1 className="font-semibold text-xl mt-5">{article.title}</h1>
+                    <div className="w-[200px] h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
+                      <span className="text-white bg-gray-800 h-full w-full rounded-lg text-center flex items-center justify-center">{item.name}</span>
+                    </div>
                   </div>
-                  <Link href={`detail-article/${article.slug}`} className="font-semibold">Read More</Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                </div>
+              </div>
+            </Link>
+            ))}
+          </div>
           )}
         </div>
-        <Product />
         {loadinggal ? (
           <div className="flex h-screen items-center justify-center">
             <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>

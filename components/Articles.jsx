@@ -4,14 +4,8 @@ export default function Articles(props) {
   const renderMoreLink = () => {
     if (props.more === "no") {
       return null;
-    } else if (props.more === "gallerys") {
+    } else {
       return <Link href="/gallerys">View More</Link>;
-    } else if (props.more === "all") {
-      return <Link href="/articles">More</Link>;
-    } else if (props.more === "Sirloin") {
-      return <Link href="/sirloin/articles">More</Link>;
-    } else if (props.more === "Silo") {
-      return <Link href="/silo/articles">More</Link>;
     }
   };
 
