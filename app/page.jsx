@@ -106,7 +106,7 @@ export default function Home() {
           </div>
         ) : (
           <article className="w-[90%] mx-auto pb-20">
-            <Articles title="gallerys" more="gallerys" />
+            <Articles title="galleries" more="gallerys" />
             {datagal?.data && (<ImageComp datas={datagal.data} isMobile={isMobile}/>)}
           </article>
         )}
