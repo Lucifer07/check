@@ -63,7 +63,7 @@ export default function ArticlesPage({ params }) {
         <>
           <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover" style={{ backgroundImage: `url("https://rest.1010-group.com/outlate/${data.image}")` }}>
           </div>
-          <Nav id="Gallerys" />
+          <Nav />
       <main className="flex flex-col items-center justify-center">
             <section className="h-screen bg-white flex justify-center items-center">
               <div>
@@ -74,7 +74,7 @@ export default function ArticlesPage({ params }) {
                 </div>
                 <br></br>
                 <Link href={data.link} className="flex justify-center items-center mt-6 py-2 px-4 text-center bg-gray-700 text-white">
-                  View
+                  Instagram
                 </Link>
               </div>
             </section>
