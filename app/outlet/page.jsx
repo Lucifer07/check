@@ -54,7 +54,9 @@ export default function OurOutlet() {
 
   return (
     <>
-      <div className="gallery-bg flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover"></div>
+      <div className="dashboard-bg flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover ">
+        <h1 className="text-white font-bold text-6xl shadow-lg p-5 rounded-md bg-black opacity-80"> Welcome To Our Outlet</h1>
+      </div>
       <Nav />
       <main className="flex flex-col items-center justify-center">
         {loading ? (
@@ -63,7 +65,7 @@ export default function OurOutlet() {
           </div>
         ) : (
           <div className="container mx-auto px-4 py-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-0sm:grid-cols-3 md:grid-cols-4">
               {photos?.data?.data?.map((photo, index) => (
                 <Link key={index} href={"/outlet/"+photo.slug}>
                   <div className="relative cursor-pointer">
@@ -74,11 +76,11 @@ export default function OurOutlet() {
                           alt={photo.image}
                           width={500}
                           height={500}
-                          className="w-[200px] h-[200px] rounded-lg shadow-lg border-5 border-gray-600 object-cover"
+                          className="w-full h-[200px] shadow-lg border-5 border-gray-600 object-cover"
                           loading="lazy"
                         />
-                        <div className="w-[200px] h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
-                          <span className="text-white bg-gray-800 h-full w-full rounded-lg text-center flex items-center justify-center">{photo.name}</span>
+                        <div className="w-full h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
+                          <span className="text-white bg-gray-800 h-full w-full  text-center flex items-center justify-center">{photo.name}</span>
                         </div>
                       </div>
                     </div>

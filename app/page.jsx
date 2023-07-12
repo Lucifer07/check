@@ -65,6 +65,9 @@ export default function Home() {
       <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover -z-20 dashboard-bg"></div>
       <Nav id="Home" />
       <main>
+      <div className="w-[90%] mx-auto pb-20 pt-20">
+      <h1 className="text-3xl mx-6 font-Caveat text-center pb-20 pt-20">Bring an elevated casual lifestyle of dining experience  by redefining the boundaries of expectations and exciting youre sense</h1>
+        </div>
         <div className="w-[90%] mx-auto pb-20">
           <Articles title="outlet" more={"no"}/>
           {loadingart ? (
@@ -72,7 +75,7 @@ export default function Home() {
               <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-2 lg:grid-cols-5 ">
             {dataart &&dataart.data.map((item) => (
               <Link key={item.id} href={"/outlet/"+item.slug}>
               <div className="relative cursor-pointer">
@@ -83,11 +86,11 @@ export default function Home() {
                       alt={item.image}
                       width={500}
                       height={500}
-                      className="w-[200px] h-[200px] rounded-lg shadow-lg border-5 border-gray-600 object-cover"
+                      className="w-full h-[200px]  shadow-lg border-5 border-gray-600 object-cover"
                       loading="lazy"
                     />
-                    <div className="w-[200px] h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
-                      <span className="text-white bg-gray-800 h-full w-full rounded-lg text-center flex items-center justify-center">{item.name}</span>
+                    <div className="w-full h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
+                      <span className="text-white bg-gray-800 h-full w-full  text-center flex items-center justify-center">{item.name}</span>
                     </div>
                   </div>
                 </div>
@@ -107,6 +110,15 @@ export default function Home() {
             {datagal?.data && (<ImageComp datas={datagal.data} isMobile={isMobile}/>)}
           </article>
         )}
+        <div className="bg-gray-700 w-full">
+        <div className="w-[90%] mx-auto pb-20 pt-20 ">
+      <div className="text-3xl mx-6 font-montserrat  text-center pb-20 pt-20 text-white">
+      <h1 className="">Contact Us:</h1>
+      <h1 className="">Email: </h1>
+      </div>
+        </div>
+
+        </div>
       </main>
     </>
   );
