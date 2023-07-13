@@ -16,7 +16,9 @@ module.exports = {
         'montserrat': ['Montserrat'],
         'lato': ['Lato'],
         'garamond': ['Garamond'],
-        'Caveat':['Caveat', 'cursive']
+        'Caveat':['Caveat', 'cursive'],
+        'josefin':['josefin', 'cursive'],
+        'inter':['inter', 'sans-serif'],
      },
     },
   },

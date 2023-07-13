@@ -31,9 +31,9 @@ export default function Nav(props) {
                 />
                 </Link>
             </div>
-            <div className="nav-link flex gap-5 ">
+            <div className="nav-link flex gap-5 uppercase font-josefin">
                 <Link className="p-2" href="/about">About Us</Link>
-                <Link className="p-2" href="/outlet">Our Outlet</Link>
+                <Link className="p-2" href="/outlet">OUR ESTABLISHMENTS</Link>
                 <Link className="p-2" href="/gallerys">Galleries</Link>
                 <Link className="p-2" href="/contact">Contact</Link>
             </div>
@@ -52,10 +52,10 @@ export default function Nav(props) {
                 </div>
               
             
-                <div className={nav? "gap-5 flex relative left-[-1000px] ease-in duration-300 flex-col mt-1 bg-gray-800/30" : "gap-5 flex relative left-0 ease-in duration-300 flex-col mt-1 bg-gray-800/40 backdrop-blur-lg"}>
+                <div className={nav? "font-josefin uppercase gap-5 flex relative left-[-1000px] ease-in duration-300 flex-col mt-1 bg-gray-800/30" : "font-josefin uppercase gap-5 flex relative left-0 ease-in duration-300 flex-col mt-1 bg-gray-800/40 backdrop-blur-lg"}>
                     <Link className="p-5 hover:bg-slate-500" href="/">Home</Link>
                     <Link className="p-5 hover:bg-slate-500" href="/about">About Us</Link>
-                    <Link className="p-5 hover:bg-slate-500" href="/outlet">Our Outlet</Link>
+                    <Link className="p-5 hover:bg-slate-500" href="/outlet">OUR ESTABLISHMENTS</Link>
                     <Link className="p-5 hover:bg-slate-500" href="/gallerys">Galleries</Link>
                     <Link className="p-5 hover:bg-slate-500" href="/contact">Contact</Link>
                 </div>
