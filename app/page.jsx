@@ -66,7 +66,7 @@ export default function Home() {
       <Nav id="Home" />
       <main>
       <div className="w-[90%] mx-auto pb-20 pt-20">
-      <h1 className="text-3xl mx-6 font-Caveat text-center pb-20 pt-20">Bring an elevated casual lifestyle of dining experience  by redefining the boundaries of expectations and exciting youre sense</h1>
+      <h1 className="text-3xl mx-6 text-center pb-20 pt-20">Bring an elevated casual lifestyle of dining experience  by redefining the boundaries of expectations and exciting youre sense</h1>
         </div>
         <div className="w-[90%] mx-auto pb-20">
           <Articles title="outlet" more={"no"}/>
@@ -112,7 +112,7 @@ export default function Home() {
         )}
         <div className="bg-gray-700 w-full">
         <div className="w-[90%] mx-auto pb-20 pt-20 ">
-      <div className="text-3xl mx-6 font-montserrat  text-center pb-20 pt-20 text-white">
+      <div className="text-3xl mx-6  text-center pb-20 pt-20 text-white">
       <h1 className="">Contact Us:</h1>
       <h1 className="">Email: </h1>
       </div>
