@@ -55,7 +55,7 @@ export default function OurOutlet() {
   return (
     <>
       <div className="dashboard-bg flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover ">
-        <h1 className="text-white font-bold text-6xl shadow-lg p-5 rounded-md bg-black opacity-80"> Welcome To Our Outlet</h1>
+        
       </div>
       <Nav />
       <main className="flex flex-col items-center justify-center">
