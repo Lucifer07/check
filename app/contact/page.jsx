@@ -64,7 +64,7 @@ export default function Contact() {
       <div className="nav-bg flex relative top-0 left-0 lg:h-[100px] h-16 w-full items-center bg-no-repeat justify-center bg-center bg-cover"></div>
       <Nav id="contact" />
       <main className="h-screen w-full bg-black text-white">
-        <h1 className="text-4xl text-center mx-auto font-josefin mb-20 pt-10">HIT US UP, WE'LL REPLY SOON</h1>
+        <h1 className="text-4xl text-center mx-auto font-josefin mb-20 pt-10">HIT US UP, WE&apos;LL REPLY SOON</h1>
         <div className="h-full flex justify-center">
           <form onSubmit={contactUsHandler} className="space-y-4 w-1/2">
             <div className="border-2 rounded-lg border-white p-5">
