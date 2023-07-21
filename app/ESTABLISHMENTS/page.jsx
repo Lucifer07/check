@@ -4,6 +4,9 @@ import Nav from "@/components/Nav";
 import axios from "axios";
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Establishments'
+}
 export default function OurOutlet() {
   const [photos, setPhotos] = useState();
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,16 +61,16 @@ export default function OurOutlet() {
         
       </div>
       <Nav />
-      <main className="flex flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center bg-black">
         {loading ? (
           <div className="flex h-screen items-center justify-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
           </div>
         ) : (
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-2 gap-0sm:grid-cols-3 md:grid-cols-4">
               {photos?.data?.data?.map((photo, index) => (
-                <Link key={index} href={"/outlet/"+photo.slug}>
+                <Link key={index} href={"/ESTABLISHMENTS/"+photo.slug}>
                   <div className="relative cursor-pointer">
                     <div className="aspect-w-3 aspect-h-2">
                       <div className="relative">
@@ -76,11 +79,11 @@ export default function OurOutlet() {
                           alt={photo.image}
                           width={500}
                           height={500}
-                          className="w-full h-[200px] shadow-lg border-5 border-gray-600 object-cover"
+                          className="w-full h-[200px] shadow-lg border-5 border-white object-cover"
                           loading="lazy"
                         />
                         <div className="w-full h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
-                          <span className="text-white bg-gray-800 h-full w-full  text-center flex items-center justify-center">{photo.name}</span>
+                          <span className="text-white bg-gray-800 h-full w-full  text-center flex items-center justify-center uppercase font-josefin">{photo.name}</span>
                         </div>
                       </div>
                     </div>

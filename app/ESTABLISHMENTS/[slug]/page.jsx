@@ -61,20 +61,20 @@ export default function ArticlesPage({ params }) {
         </div>
       ) : (
         <>
-          <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover" style={{ backgroundImage: `url("https://rest.1010-group.com/outlate/${data.image}")` }}>
+          <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover" style={{ backgroundImage: `url("https://rest.1010-group.com/outlate/img/${data.image2}")` }}>
           </div>
           <Nav />
-      <main className="flex flex-col items-center justify-center">
-            <section className="h-screen bg-white flex justify-center items-center">
+      <main className="flex flex-col items-center justify-center bg-black">
+            <section className="h-screen flex justify-center items-center text-white">
               <div>
-          <h1 className="text-3xl font-montserrat  text-center mt-6">{data.name.toUpperCase()}</h1>
+          <h1 className="text-3xl  text-center mt-6 font-josefin">{data.name.toUpperCase()}</h1>
                 
-                <div className=" mx-3 font-Caveat">
+                <div className="mx-3">
                 <div dangerouslySetInnerHTML={createMarkup(data.description)}/>
                 </div>
                 <br></br>
-                <Link href={data.link} className="flex justify-center items-center mt-6 py-2 px-4 text-center bg-gray-700 text-white">
-                  Instagram
+                <Link href={data.link} className="flex justify-center items-center mt-6 py-2 px-4 text-center bg-gray-700 text-white uppercase">
+                  Learn more
                 </Link>
               </div>
             </section>
@@ -83,4 +83,7 @@ export default function ArticlesPage({ params }) {
       )}
     </>
   );
+}
+export const metadata = {
+  title: 'Establishments'
 }

@@ -1,14 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata = {
   title: {
-    default: '10/10 Group',
-    template: '%s | 10/10 Group',
+    default: '10/10',
+    template: '%s | 10/10',
   },
   description: 'Silo & Sirloin restaurant',
 }
@@ -16,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
       
         {children}
         <Footer />
