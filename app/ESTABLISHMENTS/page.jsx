@@ -4,9 +4,6 @@ import Nav from "@/components/Nav";
 import axios from "axios";
 import Link from "next/link";
 
-export const metadata = {
-  title: 'Establishments'
-}
 export default function OurOutlet() {
   const [photos, setPhotos] = useState();
   const [currentPage, setCurrentPage] = useState(1);

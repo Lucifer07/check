@@ -84,6 +84,3 @@ export default function ArticlesPage({ params }) {
     </>
   );
 }
-export const metadata = {
-  title: 'Establishments'
-}
