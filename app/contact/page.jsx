@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Nav from '@/components/Nav';
 
-export const metadata = {
-  title: 'Contact',
-};
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
