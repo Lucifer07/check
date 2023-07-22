@@ -1,14 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: "josefin";
   src: url("../public/font/josefin.ttf");
 }
+
 @font-face {
-  font-family: "inter";
+  font-family: "inter-medium";
   src: url("../public/font/inter.ttf");
 }
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,24 +27,37 @@
 }
 
 body {
-  font-family: "inter", sans-serif;
+  font-family: "inter-medium", sans-serif;
 }
+
 .dashboard-bg {
   background-image: url(../public/images/dashboard-img.jpg);
 }
+
 .dashboard-bg-2 {
   background-image: url(../public/images/dashboard-img-2.png);
 }
+
 .silo-bg {
   background-image: url(../public/images/silo/1.jpg);
 }
+
 .sirloin-bg {
   background-image: url(../public/images/sirloin/1.jpg);
 }
+
 .gallery-bg {
   background-image: url(../public/images/gallery-img.png);
 }
 
 .nav-bg {
   background-image: url(../public/images/nav-img.png);
+}
+
+.esta-bg {
+  background-image: url(../public/images/bg-esta.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }

@@ -4,6 +4,7 @@ import Articles from "@/components/Articles";
 import Nav from "@/components/Nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "next/legacy/image";
 
 export default function Home() {
   const [dataart, setDataart] = useState(null);
@@ -44,8 +45,11 @@ export default function Home() {
       <Nav id="Home" />
       <main className="bg-black">
         <div className="w-[90%] mx-auto pb-20 pt-20">
-          <h1 className="text-3xl mx-6 pb-20 pt-20 uppercase text-white text-justify">Bring an elevated casual lifestyle of dining experience  by redefining the boundaries of expectations and exciting your sense</h1>
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl mx-6 pb-20 pt-20 uppercase text-white text-justify">
+            Bring an elevated casual lifestyle of dining experience by redefining the boundaries of expectations and exciting your sense
+          </h1>
         </div>
+
         <div className="w-[90%] mx-auto pb-20">
           <Articles title="ESTABLISHMENTS" more={"no"} />
           {loadingart ? (
@@ -53,29 +57,32 @@ export default function Home() {
               <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-0 md:grid-cols-2 lg:grid-cols-5 ">
-              {dataart && dataart.data.map((item) => (
-                <Link key={item.id} href={"/ESTABLISHMENTS/" + item.slug}>
-                  <div className="relative cursor-pointer">
-                    <div className="aspect-w-3 aspect-h-2">
-                      <div className="relative">
-                        <img
-                          src={`https://rest.1010-group.com/outlate/${item.image}`}
-                          alt={item.image}
-                          width={500}
-                          height={500}
-                          className="w-full h-[200px]  shadow-lg border-5 border-white object-cover"
-                          loading="lazy"
-                        />
-                        <div className="w-full h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
-                          <span className="text-white bg-black h-full w-full  text-center flex items-center justify-center font-josefin uppercase">{item.name}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-2 lg:grid-cols-5">
+      {dataart &&
+        dataart.data.map((item) => (
+          <Link key={item.id} href={"/ESTABLISHMENTS/" + item.slug}>
+            <div className="relative cursor-pointer aspect-w-3 aspect-h-2">
+              <div className="h-full w-full">
+                <Image
+                  src={`https://rest.1010-group.com/outlate/${item.image}`}
+                  alt={item.image}
+                  layout="responsive"
+                  width={3}
+                  height={2}
+                  objectFit="cover"
+                  className="shadow-lg border-5 border-white"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
+                <span className="text-white bg-black h-full w-full text-center flex items-center justify-center font-josefin uppercase">
+                  {item.name}
+                </span>
+              </div>
             </div>
+          </Link>
+        ))}
+    </div>
           )}
         </div>
       </main>
