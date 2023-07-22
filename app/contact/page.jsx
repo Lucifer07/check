@@ -64,10 +64,10 @@ export default function Contact() {
       <div className="nav-bg flex relative top-0 left-0 lg:h-[100px] h-16 w-full items-center bg-no-repeat justify-center bg-center bg-cover"></div>
       <Nav id="contact" />
       <main className="h-screen w-full bg-black text-white">
-        <h1 className="text-4xl text-center mx-auto font-josefin mb-20 pt-10">HIT US UP, WE&apos;LL REPLY SOON</h1>
-        <div className="h-full flex justify-center">
-          <form onSubmit={contactUsHandler} className="space-y-4 w-1/2">
-            <div className="border-2 rounded-lg border-white p-5">
+      <h1 className="text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl text-center mx-auto font-josefin mb-10 pt-5 sm:pt-10 lg:pt-20">HIT US UP, WE&apos;LL REPLY SOON</h1>
+        <div className="h-full xl:m-16 lg:m-16 px-2">
+          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full">
+            <div className="border-2 border-white">
               {successMessage && (
                 <div className="w-50 rounded-md">
                   <div className="text-white px-6 py-4 border-0 relative mb-4 mt-5 bg-blue-500 rounded-md">
@@ -81,73 +81,63 @@ export default function Contact() {
                 </div>
               )}
               <div className="flex">
-                <div className="m-2">
-                  <label htmlFor="name" className="block mb-1">
-                    Name:
-                  </label>
                   <input
                     type="text"
+                    placeholder='name'
                     id="name"
                     name="name"
                     value={enteredName}
                     onChange={setEnteredNameHandler}
                     required
-                    className="w-full text-black px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                    className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                   />
-                </div>
-                <div className="m-2">
-                  <label htmlFor="email" className="block mb-1">
-                    Email:
-                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
+                    placeholder='email'
                     value={enteredEmail}
                     onChange={setEnteredEmailHandler}
                     required
-                    className="w-full text-black px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                    className="w-full text-white bg-black border border-gray-300 focus:outline-none focus:border-blue-500"
                   />
-                </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block mb-1">
-                  Subject:
-                </label>
                 <input
                   type="text"
                   id="subject"
+                  placeholder='subject'
                   name="subject"
                   value={enteredSubject}
                   onChange={setEnteredSubjectHandler}
                   required
-                  className="w-full text-black px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                  className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block mb-1">
-                  Message:
-                </label>
                 <textarea
                   id="message"
                   name="message"
+                  placeholder='message'
                   value={enteredMessage}
                   onChange={setEnteredMessageHandler}
                   required
-                  className="w-full text-black px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                  className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500 border-b-0"
                   rows="4"
                 />
               </div>
-              <div className=""></div>
+              <div className="flex justify-end">
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300"
+                className="w-20 px-1 py-2 bg-black text-white  hover:text-blue-600 transition-colors duration-300 text-sm"
               >
                 {isLoading && (
                   <i className="fas fa-hourglass fa-spin text-white mr-2"></i>
                 )}
-                Submit
+                SEND
               </button>
+
+              </div>
             </div>
           </form>
         </div>
