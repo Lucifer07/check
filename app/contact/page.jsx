@@ -66,7 +66,7 @@ export default function Contact() {
       <main className="h-screen w-full bg-black text-white">
       <h1 className="text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl text-center mx-auto font-josefin mb-10 pt-5 sm:pt-10 lg:pt-20">HIT US UP, WE&apos;LL REPLY SOON</h1>
         <div className="h-full xl:m-16 lg:m-16 px-2">
-          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full">
+          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full ">
             <div className="border-2 border-white">
               {successMessage && (
                 <div className="w-50 rounded-md">
@@ -83,53 +83,53 @@ export default function Contact() {
               <div className="flex">
                   <input
                     type="text"
-                    placeholder='name'
+                    placeholder='Name'
                     id="name"
                     name="name"
                     value={enteredName}
                     onChange={setEnteredNameHandler}
                     required
-                    className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
+                    className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                   />
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder='email'
+                    placeholder='Email'
                     value={enteredEmail}
                     onChange={setEnteredEmailHandler}
                     required
-                    className="w-full text-white bg-black border border-gray-300 focus:outline-none focus:border-blue-500"
+                    className="placeholder-white w-full text-white bg-black border border-gray-300 focus:outline-none focus:border-blue-500"
                   />
               </div>
               <div>
                 <input
                   type="text"
                   id="subject"
-                  placeholder='subject'
+                  placeholder='Subject'
                   name="subject"
                   value={enteredSubject}
                   onChange={setEnteredSubjectHandler}
                   required
-                  className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
+                  className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                 />
               </div>
               <div>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder='message'
+                  placeholder='Message'
                   value={enteredMessage}
                   onChange={setEnteredMessageHandler}
                   required
-                  className="w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500 border-b-0"
+                  className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500 border-b-0"
                   rows="4"
                 />
               </div>
               <div className="flex justify-end">
               <button
                 type="submit"
-                className="w-20 px-1 py-2 bg-black text-white  hover:text-blue-600 transition-colors duration-300 text-sm"
+                className="w-20 px-1 py-2 bg-black text-white transition-colors duration-300 text-sm"
               >
                 {isLoading && (
                   <i className="fas fa-hourglass fa-spin text-white mr-2"></i>

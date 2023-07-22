@@ -54,7 +54,7 @@ export default function OurOutlet() {
 
   return (
     <>
-      <div className="esta-bg flex relative top-0 left-0 h-screen w-full">
+      <div className="esta-bg flex relative top-0 left-0  h-[70vh] w-full">
       </div>
       <Nav />
       <main className="flex flex-col items-center justify-center bg-black">

@@ -53,7 +53,7 @@ export default function GallerysPage() {
 
   return (
     <>
-      <div className="gallery-bg flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover"></div>
+      <div className="gallery-bg flex relative top-0 left-0  h-[70vh] w-full items-center bg-no-repeat justify-center bg-center bg-cover"></div>
       <Nav id="Gallerys" />
       <main className="flex flex-col items-center justify-center">
         {loading ? (

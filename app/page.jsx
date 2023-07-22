@@ -41,13 +41,18 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex relative top-0 left-0 lg:h-[1000px] h-screen w-full items-center bg-no-repeat justify-center bg-center bg-cover -z-20 dashboard-bg"></div>
+      <div className="flex relative top-0 left-0 h-[70vh] w-full items-center bg-no-repeat justify-center bg-center bg-cover -z-20 dashboard-bg"></div>
       <Nav id="Home" />
       <main className="bg-black">
         <div className="w-[90%] mx-auto pb-20 pt-20">
-          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl mx-6 pb-20 pt-20 uppercase text-white text-justify">
-            Bring an elevated casual lifestyle of dining experience by redefining the boundaries of expectations and exciting your sense
-          </h1>
+          <div className="container mx-auto grid md:grid-cols-2 gap-8">
+            <div className="text-md text-justify flex-col">
+              <h1 className="text-base sm:text-md md:text-lg lg:text-xl xl:text-xl mx-6 pb-20 pt-20 uppercase text-white text-left">
+                Bring an elevated casual lifestyle of dining experience by redefining the boundaries of expectations and exciting your sense
+              </h1>
+            </div>
+            <p className="text-lg text-justify flex-col"></p>
+          </div>
         </div>
 
         <div className="w-[90%] mx-auto pb-20">
@@ -58,31 +63,31 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-0 md:grid-cols-2 lg:grid-cols-5">
-      {dataart &&
-        dataart.data.map((item) => (
-          <Link key={item.id} href={"/ESTABLISHMENTS/" + item.slug}>
-            <div className="relative cursor-pointer aspect-w-3 aspect-h-2">
-              <div className="h-full w-full">
-                <Image
-                  src={`https://rest.1010-group.com/outlate/${item.image}`}
-                  alt={item.image}
-                  layout="responsive"
-                  width={3}
-                  height={2}
-                  objectFit="cover"
-                  className="shadow-lg border-5 border-white"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
-                <span className="text-white bg-black h-full w-full text-center flex items-center justify-center font-josefin uppercase">
-                  {item.name}
-                </span>
-              </div>
+              {dataart &&
+                dataart.data.map((item) => (
+                  <Link key={item.id} href={"/ESTABLISHMENTS/" + item.slug}>
+                    <div className="relative cursor-pointer aspect-w-3 aspect-h-2">
+                      <div className="h-full w-full">
+                        <Image
+                          src={`https://rest.1010-group.com/outlate/${item.image}`}
+                          alt={item.image}
+                          layout="responsive"
+                          width={3}
+                          height={2}
+                          objectFit="cover"
+                          className="shadow-lg border-5 border-white"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
+                        <span className="text-white bg-black h-full w-full text-center flex items-center justify-center font-josefin uppercase">
+                          {item.name}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
             </div>
-          </Link>
-        ))}
-    </div>
           )}
         </div>
       </main>
