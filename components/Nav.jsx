@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link'
 import { useState } from 'react'
-import { BiMenuAltRight } from 'react-icons/bi'
+import { IoIosMenu } from 'react-icons/io'
 import { IoMdClose } from 'react-icons/io'
 
 
@@ -15,7 +15,7 @@ export default function Nav(props) {
         <>
         
          <header className="absolute top-0 left-0 w-full flex mx-auto justify-center flex-col bg-transparent text-white items-center ">
-            <nav className=" justify-between items-center p-5 w-full mx-auto hidden lg:flex">
+            <nav className=" justify-between items-center p-5 w-full mx-auto hidden lg:flex xl:flex">
             <div className="flex items-center gap-5">
                 <Link href="/">
                 <img 
@@ -42,12 +42,10 @@ export default function Nav(props) {
                     
                     <div className='p-3 mr-[-20px]'>
                         {
-                            nav? ( <BiMenuAltRight onClick={handleNav} size={30} /> ) : ( <IoMdClose onClick={handleNav} size={30} /> )
+                            nav? ( <IoIosMenu onClick={handleNav} size={30} /> ) : ( <IoMdClose onClick={handleNav} size={30} /> )
                         }
                     </div>
                 </div>
-              
-            
                 <div className={nav? "font-josefin uppercase gap-5 flex relative left-[-1000px] ease-in duration-300 flex-col mt-1 bg-gray-800/30" : "font-josefin uppercase gap-5 flex relative left-0 ease-in duration-300 flex-col mt-1 bg-gray-800/40 backdrop-blur-lg"}>
                     <Link className="p-5 hover:bg-slate-500" href="/">Home</Link>
                     <Link className="p-5 hover:bg-slate-500" href="/about">About Us</Link>

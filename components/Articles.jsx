@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Articles(props) {
   return (
-    <section className="bg-black w-full py-10 flex flex-col items-start sm:flex-row justify-between sm:items-center text-white">
+    <section className="bg-black w-full pb-10 flex flex-col items-start sm:flex-row justify-between sm:items-center text-white">
       <div className="article-title flex-col items-center gap-5">
         <h1 className="text-md sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl font-bold uppercase">
           {props.title}

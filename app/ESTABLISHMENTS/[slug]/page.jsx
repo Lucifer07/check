@@ -2,13 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, A11y } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
 import Nav from "@/components/Nav";
-import Description from "@/components/Description";
 
 export default function ArticlesPage({ params }) {
   const slug = params.slug;
@@ -65,9 +59,9 @@ export default function ArticlesPage({ params }) {
           </div>
           <Nav />
           <main className="flex flex-col items-center justify-center bg-black">
-            <section className="h-screen flex justify-center items-center text-white">
-              <div>
-                <h1 className="text-3xl  text-center mt-6 font-josefin">{data.name.toUpperCase()}</h1>
+            <section className=" h-[70vh] flex justify-center items-center text-white">
+              <div className="">
+                <h1 className="text-3xl  text-center mt-2 font-josefin">{data.name.toUpperCase()}</h1>
                 <div className="flex justify-center items-center">
                 <div className="w-1/2">
                   <div dangerouslySetInnerHTML={createMarkup(data.description)} />

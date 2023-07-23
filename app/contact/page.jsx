@@ -66,12 +66,12 @@ export default function Contact() {
       <main className="h-screen w-full bg-black text-white">
       <h1 className="text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl text-center mx-auto font-josefin mb-10 pt-5 sm:pt-10 lg:pt-20">HIT US UP, WE&apos;LL REPLY SOON</h1>
         <div className="h-full xl:m-16 lg:m-16 px-2">
-          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full ">
+          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full text-sm">
             <div className="border-2 border-white">
               {successMessage && (
                 <div className="w-50 rounded-md">
                   <div className="text-white px-6 py-4 border-0 relative mb-4 mt-5 bg-blue-500 rounded-md">
-                    <span className="text-xl inline-block mr-5 align-middle">
+                    <span className="inline-block mr-5 align-middle">
                       <i className="fas fa-bell"></i>
                     </span>
                     <span className="inline-block align-middle mr-8">
@@ -89,7 +89,7 @@ export default function Contact() {
                     value={enteredName}
                     onChange={setEnteredNameHandler}
                     required
-                    className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
+                    className="px-2 placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                   />
                   <input
                     type="email"
@@ -99,7 +99,7 @@ export default function Contact() {
                     value={enteredEmail}
                     onChange={setEnteredEmailHandler}
                     required
-                    className="placeholder-white w-full text-white bg-black border border-gray-300 focus:outline-none focus:border-blue-500"
+                    className="px-2 placeholder-white w-full text-white bg-black border border-gray-300 focus:outline-none focus:border-blue-500"
                   />
               </div>
               <div>
@@ -111,7 +111,7 @@ export default function Contact() {
                   value={enteredSubject}
                   onChange={setEnteredSubjectHandler}
                   required
-                  className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
+                  className="px-2 placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500"
                 />
               </div>
               <div>
@@ -122,7 +122,7 @@ export default function Contact() {
                   value={enteredMessage}
                   onChange={setEnteredMessageHandler}
                   required
-                  className="placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500 border-b-0"
+                  className="px-2 placeholder-white w-full text-white bg-black border border-white focus:outline-none focus:border-blue-500 border-b-0"
                   rows="4"
                 />
               </div>

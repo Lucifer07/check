@@ -10,6 +10,8 @@ export default function Home() {
   const [dataart, setDataart] = useState(null);
   const [loadingart, setLoadingart] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [totalImages, setTotalImages] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
@@ -39,12 +41,28 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    if (dataart && dataart.data) {
+      setTotalImages(dataart.data.length || 0);
+    }
+  }, [dataart]);
+
+  const handleImageLoad = () => {
+    setImagesLoaded((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (imagesLoaded === totalImages) {
+      setLoadingart(false);
+    }
+  }, [imagesLoaded, totalImages]);
+
   return (
     <>
       <div className="flex relative top-0 left-0 h-[70vh] w-full items-center bg-no-repeat justify-center bg-center bg-cover -z-20 dashboard-bg"></div>
       <Nav id="Home" />
       <main className="bg-black">
-        <div className="w-[90%] mx-auto pb-20 pt-20">
+        <div className="w-[90%] h-[50%] mx-auto">
           <div className="container mx-auto grid md:grid-cols-2 gap-8">
             <div className="text-md text-justify flex-col">
               <h1 className="text-base sm:text-md md:text-lg lg:text-xl xl:text-xl mx-6 pb-20 pt-20 uppercase text-white text-left">
@@ -55,7 +73,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[90%] mx-auto pb-20">
+        <div className="w-[90%] mx-auto pb-10">
           <Articles title="ESTABLISHMENTS" more={"no"} />
           {loadingart ? (
             <div className="flex h-screen items-center justify-center">
@@ -77,6 +95,7 @@ export default function Home() {
                           objectFit="cover"
                           className="shadow-lg border-5 border-white"
                           loading="lazy"
+                          onLoad={handleImageLoad}
                         />
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
