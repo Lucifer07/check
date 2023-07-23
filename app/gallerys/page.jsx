@@ -5,75 +5,45 @@ import axios from "axios";
 import Nav from "@/components/Nav";
 
 const Gallery = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [galleryData, setGalleryData] = useState([]);
-  const [totalPages, setTotalPages] = useState(1);
   const [totalImage, setTotalImage] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
-  useEffect(() => {
-    fetchGalleryData();
-  }, [currentPage]);
-
-  useEffect(() => {
-    setTotalImage(galleryData?.data?.data?.length || 0);
-  }, [galleryData]);
 
   const fetchGalleryData = useCallback(async () => {
     try {
       const response = await axios.get(
-        `https://rest.1010-group.com/galery?page=${currentPage}`
-      );
-      const data = response.data;
-      setGalleryData(data);
-      setTotalPages(data.data.last_page);
+        `https://rest.1010-group.com/galery`
+      ).then((response)=>{
+        setGalleryData(response.data.data);
+        console.log(galleryData);
+        setTotalImage(response.data.data.length)
+      })
     } catch (error) {
       console.error("Error fetching gallery data:", error);
     }
-  }, [currentPage]);
-
+  }, []);
+  useEffect(() => {
+    fetchGalleryData()
+  }, [])
   const handlePrevClickS1 = useCallback(() => {
-    if (currentImage > 0) {
-      setCurrentImage((prevPage) => prevPage - 1);
-    }
-  }, [currentImage]);
+    const dataNull=[...galleryData]
+    const DataMain=dataNull[0]
+    dataNull.splice(0,1)
+    dataNull.push(DataMain)
+    setGalleryData(dataNull)
+  }, [galleryData]);
 
   const handleNextClickS1 = useCallback(() => {
-    if (currentImage < totalImage - 1) {
-      setCurrentImage((prevPage) => prevPage + 1);
-    }
-  }, [currentImage, totalImage]);
+    const dataNull=[...galleryData]
+    let DataMain=dataNull[totalImage-1]
+    dataNull.splice(totalImage-1,1)
+    dataNull.unshift(DataMain)
+    setGalleryData(dataNull)
+  }, [galleryData]);
 
   const handleImageClick = useCallback((index) => {
     setCurrentImage(index);
   }, []);
-
-  const handlePrevClick = useCallback(() => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
-  }, [currentPage]);
-
-  const handleNextClick = useCallback(() => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  }, [currentPage, totalPages]);
-  const handlePrevClickSm = useCallback(() => {
-    if (currentImage == 0 && currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    } else if (currentImage != 0) {
-      setCurrentImage((prevPage) => prevPage - 1);
-    }
-  }, [currentPage, currentImage]);
-
-  const handleNextClickSm = useCallback(() => {
-    if (currentPage < totalPages && currentImage == totalImage) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    } else if (currentImage < totalImage - 1) {
-      setCurrentImage((prevPage) => prevPage + 1);
-    }
-  }, [currentPage, totalPages, currentImage, totalImage]);
-
   return (
     <div>
       <Nav />
@@ -82,39 +52,36 @@ const Gallery = () => {
         <div
           className={`arrow-left text-white text-3xl hidden sm:block`}
           onClick={handlePrevClickS1}
-          style={{ cursor: currentImage === 0 ? "not-allowed" : "pointer" }}
         >
           <FaArrowLeft />
         </div>
-        {galleryData?.data?.data?.length > 0 && (
+        {galleryData && (
           <img
-            src={`https://rest.1010-group.com/images/${galleryData?.data?.data[currentImage]?.name}`}
+            src={`https://rest.1010-group.com/images/${galleryData[currentImage]?.name}`}
             alt="Gallery"
-            className="h-[30vh] w-[40vh] rounded-md shadow-gray-400 shadow-md justify-center"
+            className="h-[43vh] w-[43vh] rounded-md justify-center"
           />
         )}
         <div
           className="relative arrow-right text-white text-3xl  hidden sm:block"
           onClick={handleNextClickS1}
-          style={{
-            cursor: currentImage === totalImage - 1 ? "not-allowed" : "pointer",
-          }}
+          
         >
           <FaArrowRight />
         </div>
       </section>
-{/* Section 2 */}
-<section className="h-[30%] w-full hidden sm:flex justify-between items-center bg-black overlay ">
+
+       {/* Section 3 */}
+       <section className="h-[30%] w-full flex  justify-between items-center bg-black ">
         <div className="flex justify-between items-center w-full p-10">
           <div
             className="arrow-left text-white text-3xl"
-            onClick={handlePrevClick}
-            style={{ cursor: currentPage === 1 ? "not-allowed" : "pointer" }}
+            onClick={handlePrevClickS1}
           >
             <FaArrowLeft />
           </div>
           <div className="flex overflow-hidden">
-            {galleryData?.data?.data?.map((image, index) => (
+            {galleryData.map((image, index) => (
               <img
                 key={index}
                 src={`https://rest.1010-group.com/images/${image.name}`}
@@ -128,46 +95,7 @@ const Gallery = () => {
           </div>
           <div
             className="arrow-right text-white text-3xl"
-            onClick={handleNextClick}
-            style={{
-              cursor: currentPage === totalPages ? "not-allowed" : "pointer",
-            }}
-          >
-            <FaArrowRight />
-          </div>
-        </div>
-      </section>
-       {/* Section 3 */}
-       <section className="h-[30%] w-full flex sm:hidden justify-between items-center bg-black ">
-        <div className="flex justify-between items-center w-full p-10">
-          <div
-            className="arrow-left text-white text-3xl"
-            onClick={handlePrevClickSm}
-            style={{ cursor: currentPage === 1 ? "not-allowed" : "pointer" }}
-          >
-            <FaArrowLeft />
-          </div>
-          <div className="flex overflow-hidden">
-            {galleryData?.data?.data?.map((image, index) => (
-              <img
-                key={index}
-                src={`https://rest.1010-group.com/images/${image.name}`}
-                alt="Gallery"
-                className={`h-[20vh] w-[30vh] object-cover ${
-                  index === currentImage ? "border-white border-2" : ""
-                } m-5 hover:cursor-pointer ${
-                  index < currentImage ? "hidden" : "block"
-                }`}
-                onClick={() => handleImageClick(index)}
-              />
-            ))}
-          </div>
-          <div
-            className="arrow-right text-white text-3xl"
-            onClick={handleNextClickSm}
-            style={{
-              cursor: currentPage === totalPages ? "not-allowed" : "pointer",
-            }}
+            onClick={handleNextClickS1}
           >
             <FaArrowRight />
           </div>

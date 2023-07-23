@@ -29,7 +29,7 @@ export default function Contact() {
       console.log(inputData);
 
       // Menggunakan axios.post dengan FormData sebagai data yang dikirimkan
-      const response = await axios.post('/mail', inputData).then((q)=>{console.log(q)})
+      const response = await axios.post('https://rest.1010-group.com/api/formmail', inputData).then((q)=>{console.log(q)})
       setSuccessMessage('Your email has been sent');
       setEnteredName('');
       setEnteredEmail('');
