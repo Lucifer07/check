@@ -66,8 +66,6 @@ export default function Contact() {
       <main className="h-screen w-full bg-black text-white">
       <h1 className="text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl text-center mx-auto font-josefin mb-10 pt-5 sm:pt-10 lg:pt-20">HIT US UP, WE&apos;LL REPLY SOON</h1>
         <div className="h-full xl:m-16 lg:m-16 px-2 flex justify-center">
-          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full text-sm">
-            <div className="border-2 border-white">
               {successMessage && (
                 <div className="w-50 rounded-md">
                   <div className="text-white px-6 py-4 border-0 relative mb-4 mt-5 bg-blue-500 rounded-md">
@@ -80,6 +78,8 @@ export default function Contact() {
                   </div>
                 </div>
               )}
+          <form onSubmit={contactUsHandler} className="space-y-4 lg:w-1/2 xl:w-1/2 md:w-full sm:w-full text-sm">
+            <div className="border-2 border-white">
               <div className="flex">
                   <input
                     type="text"
