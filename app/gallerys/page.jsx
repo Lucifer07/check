@@ -48,7 +48,7 @@ const Gallery = () => {
     <div>
       <Nav />
     {/* Section 1 */}
-    <section className="top-0 left-0 h-[60vh] flex w-full justify-center sm:justify-between items-center bg-black bg-opacity-95">
+    <section className="top-0 left-0 h-[70vh] flex w-full justify-center sm:justify-between items-center bg-black bg-opacity-95">
         <div
           className={`arrow-left text-white text-3xl hidden sm:block`}
           onClick={handlePrevClickS1}
@@ -71,8 +71,8 @@ const Gallery = () => {
         </div>
       </section>
 
-       {/* Section 3 */}
-       <section className="h-[30%] w-full flex  justify-between items-center bg-black ">
+       {/* Section 2 */}
+       <section className="h-[17%] w-full flex  justify-between items-center bg-black ">
         <div className="flex justify-between items-center w-full p-10">
           <div
             className="arrow-left text-white text-3xl"
@@ -86,7 +86,7 @@ const Gallery = () => {
                 key={index}
                 src={`https://rest.1010-group.com/images/${image.name}`}
                 alt="Gallery"
-                className={`h-[20vh] w-[30vh] object-cover ${
+                className={`h-[15vh] w-[20vh] object-cover ${
                   index === currentImage ? "border-white border-2" : ""
                 } m-5 hover:cursor-pointer`}
                 onClick={() => handleImageClick(index)}
