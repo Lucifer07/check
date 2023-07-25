@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/legacy/image";
 
 export default function OurOutlet() {
   const [photos, setPhotos] = useState();
@@ -70,7 +71,7 @@ export default function OurOutlet() {
                   <div className="relative cursor-pointer">
                     <div className="aspect-w-3 aspect-h-2">
                       <div className="relative">
-                        <img
+                        <Image
                           src={`https://rest.1010-group.com/outlate/${photo.image}`}
                           alt={photo.image}
                           width={500}

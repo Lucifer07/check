@@ -94,8 +94,8 @@ export default function Home() {
                           height={2}
                           objectFit="cover"
                           className="shadow-lg border-5 border-white"
-                          loading="lazy"
                           onLoad={handleImageLoad}
+                          priority
                         />
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">

@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import axios from "axios";
 import Nav from "@/components/Nav";
+import Image from "next/legacy/image";
 
 const Gallery = () => {
   const [galleryData, setGalleryData] = useState([]);
@@ -56,10 +57,11 @@ const Gallery = () => {
           <FaArrowLeft />
         </div>
         {galleryData && (
-          <img
+          <Image
             src={`https://rest.1010-group.com/images/${galleryData[currentImage]?.name}`}
             alt="Gallery"
             className="h-[43vh] w-[43vh] rounded-md justify-center"
+            priority
           />
         )}
         <div
@@ -82,7 +84,7 @@ const Gallery = () => {
           </div>
           <div className="flex overflow-hidden">
             {galleryData.map((image, index) => (
-              <img
+              <Image
                 key={index}
                 src={`https://rest.1010-group.com/images/${image.name}`}
                 alt="Gallery"
@@ -90,6 +92,7 @@ const Gallery = () => {
                   index === currentImage ? "border-white border-2" : ""
                 } m-5 hover:cursor-pointer`}
                 onClick={() => handleImageClick(index)}
+                priority
               />
             ))}
           </div>
