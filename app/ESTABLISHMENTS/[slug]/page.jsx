@@ -58,8 +58,8 @@ export default function ArticlesPage({ params }) {
           <div className="flex relative top-0 left-0  h-[70vh] w-full items-center bg-no-repeat justify-center bg-center bg-cover" style={{ backgroundImage: `url("https://rest.1010-group.com/outlate/img/${data.image2}")` }}>
           </div>
           <Nav />
-          <main className="flex flex-col items-center justify-center bg-black">
-            <section className=" h-[70vh] flex justify-center items-center text-white">
+          <main className="flex flex-col items-center justify-center bg-black py-10">
+            <section className="flex justify-center items-center text-white">
               <div className="">
                 <h1 className="text-3xl  text-center mt-2 font-josefin">{data.name.toUpperCase()}</h1>
                 <div className="flex justify-center items-center">
