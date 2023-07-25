@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import axios from "axios";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image"; // Import the Image component from next/next/image
 
 export default function OurOutlet() {
   const [photos, setPhotos] = useState();
@@ -77,7 +77,7 @@ export default function OurOutlet() {
                           width={500}
                           height={500}
                           className="w-full h-[200px] shadow-lg border-5 border-white object-cover"
-                          loading="lazy"
+                          priority
                         />
                         <div className="w-full h-[200px] absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-80 transition-opacity duration-300">
                           <span className="text-white bg-gray-800 h-full w-full  text-center flex items-center justify-center uppercase font-josefin">{photo.name}</span>

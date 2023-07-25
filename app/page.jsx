@@ -93,7 +93,7 @@ export default function Home() {
                           width={3}
                           height={2}
                           objectFit="cover"
-                          className="shadow-lg border-5 border-white"
+                          className="border-5 border-white"
                           onLoad={handleImageLoad}
                           priority
                         />

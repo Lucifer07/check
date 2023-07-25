@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: {
-    default: '10/10',
+    default: '1010 Group',
     template: '%s | 10/10',
   },
   description: 'Silo & Sirloin restaurant',
